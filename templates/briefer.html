@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>Briefer Demo</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+    .x {
+      /* display:inline; */
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="container">Briefer Uploader</h1>
+
+  <div id="text-input-section" class="container x" >
+    <textarea placeholder="Enter some text to analyze here" cols="100" rows="10" ></textarea>
+    <p></p>
+    <button id="text-area-btn" class="button">Detect Entities</button>
+    <p></p>
+
+  </div>
+
+  <div id="upload-section" class="container">
+    <!-- change accept for various file types -->
+    <input type="file" accept=".txt">
+  </div>
+
+  <div id="btn-section" class="container">
+    <button id="upload-detect-btn" class="button">Detect Entities</button>
+    <button class="button" disabled>Find the Sentiment</button>
+    <button class="button" disabled>Locate Key Phrases</button>
+    <button class="button" disabled>Topic Modeling</button>
+  </div>
+
+  <div id="result-section" class="container">
+    <!-- Result will be appended into here -->
+  </div>
+
+  <div id="test" class="container">
+    <h1>jQuery Example</h1>
+    <p><input type=text size=5 name=a> +
+    <input type=text size=5 name=b> =
+    <span id=result>?</span>
+    <p><a href=# id=calculate>calculate server side</a>
+  </div>
+
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous">
+  </script>
+  <script type=text/javascript>
+    $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+  </script>
+  <script src="{{ url_for('static', filename='custom.js')}}"></script>
+
+</body>
