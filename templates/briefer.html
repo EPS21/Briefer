@@ -18,13 +18,23 @@
     <p></p>
     <button id="text-area-btn" class="button">Detect Entities</button>
     <p></p>
-
   </div>
 
-  <div id="upload-section" class="container">
-    <!-- change accept for various file types -->
-    <input type="file" accept=".txt">
+  <div class="container">
+    <form id="upload-form" action="{{ url_for('index') }}" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" accept="text/plain, .pdf">
+        <input type="submit" value="send">
+        {% if msg %}
+          <p class="lead">{{msg}}!</p>
+        {% else %}
+          <p class="lead">We're in the Else</p>
+        {% endif %}
+    </form>
+    <!--<input id="upload" type="file" name="file" accept="text/plain, .pdf">-->
+    <p></p>
   </div>
+
+
 
   <div id="btn-section" class="container">
     <button id="upload-detect-btn" class="button">Detect Entities</button>
@@ -37,14 +47,20 @@
     <!-- Result will be appended into here -->
   </div>
 
-  <div id="test" class="container">
-    <h1>jQuery Example</h1>
-    <p><input type=text size=5 name=a> +
-    <input type=text size=5 name=b> =
-    <span id=result>?</span>
-    <p><a href=# id=calculate>calculate server side</a>
-  </div>
+  <!--<div id="test" class="container">-->
+    <!--<p>-->
+      <!--<input type=text size=5 name=a> +-->
+      <!--<input type=text size=5 name=b> =-->
+      <!--<span id=result>?</span>-->
+    <!--</p>-->
+    <!--<p>-->
+      <!--<a href=# id=calculate>calculate server side</a>-->
+    <!--</p>-->
+  <!--</div>-->
 
+  <!--<footer>-->
+    <!--<p><a href="form_example" id=form_example>goto form_example</a></p>-->
+  <!--</footer>-->
 
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script
